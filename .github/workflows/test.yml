@@ -30,4 +30,7 @@ jobs:
         run: echo Hello, world!
 
       - name: Run terraform
-        run: terraform init
+        run: |
+         apt update
+         apt install terraform
+         terraform init
