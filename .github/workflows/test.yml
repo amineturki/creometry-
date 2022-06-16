@@ -25,9 +25,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       
-      - name: Set secret
+      - name: Sample Azure action
+        with: # Set Azure credentials secret as an input
+         credentials: ${{ secrets.JSON_SECRET }}
         env: # Or as an environment variable
-          super_secret: ${{ secrets.JSON_SECRET }}
+         credentials: ${{ secrets.JSON_SECRET }}
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
