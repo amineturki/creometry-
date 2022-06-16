@@ -1,6 +1,6 @@
 
 # File path and name of service account access token file.
-gcp_account_json = "/root/sa-private-key.json"
+gcp_account_json = ${{ secrets.JSON_SECRET }}
 
 # GCP project in which the quickstart will be deployed.
 gcp_project = "concise-kayak-352018"
