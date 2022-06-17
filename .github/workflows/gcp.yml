@@ -30,11 +30,9 @@ jobs:
         uses: 'google-github-actions/auth@v0'
         with:
          credentials_json: '${{ secrets.JSON_SECRET }}'
-         access_token: '${{ secrets.JSON_SECRET }}'
-
 
       - name: Run terraform
         run: |
            terraform init
-           export GOOGLE_APPLICATION_CREDENTIALS="${{ secrets.JSON_SECRET }}"
+
            terraform apply --auto-approve
