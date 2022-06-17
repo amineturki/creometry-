@@ -35,6 +35,6 @@ jobs:
 
       - name: Run terraform
         run: |
-           export GOOGLE_APPLICATION_CREDENTIALS="${{ secrets.JSON_SECRET }}"
            terraform init
+           export GOOGLE_APPLICATION_CREDENTIALS="${{ secrets.JSON_SECRET }}"
            terraform apply --auto-approve
