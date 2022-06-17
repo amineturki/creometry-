@@ -1,9 +1,9 @@
 # Variables for GCP infrastructure module
 
-variable "gcp_account_json" {
-  type        = string
-  description = "File path and name of service account access token file."
-}
+#variable "gcp_account_json" {
+#  type        = string
+#  description = "File path and name of service account access token file."
+#}
 
 variable "gcp_project" {
   type        = string
