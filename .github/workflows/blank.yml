@@ -29,9 +29,7 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
 
-      - name : terraform config secret json
-        with: 
-         gcp_account_json: ${{secret.JSON_SECRET}}
+
 
       - name: Run terraform
         run: |
