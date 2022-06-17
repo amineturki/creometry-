@@ -26,6 +26,9 @@ jobs:
       - uses: actions/checkout@v3
       
 
+      - name : terraform config secret json
+        with: 
+         gcp_account_json: ${{secret.JSON_SECRET}} 
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
