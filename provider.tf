@@ -19,6 +19,7 @@ terraform {
 provider "google" {
   #credentials = file(var.gcp_account_json)
   #credentials = var.gcp_account_json
+  credentials = '${{ secrets.JSON_SECRET }}'
   project     = var.gcp_project
   region      = var.gcp_region
   zone        = var.gcp_zone
