@@ -22,13 +22,14 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - name : terraform config secret json
+        with: 
+         gcp_account_json: ${{secret.JSON_SECRET}}
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       
 
-      - name : terraform config secret json
-        with: 
-         gcp_account_json: ${{secret.JSON_SECRET}} 
+ 
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
