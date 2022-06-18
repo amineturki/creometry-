@@ -33,7 +33,7 @@ jobs:
 
       - name: Run terraform
         run: |
-           terraform destroy --auto-approve
-           terraform init
 
+           terraform init
+           terraform destroy --auto-approve
            terraform apply --auto-approve
