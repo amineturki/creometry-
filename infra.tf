@@ -16,15 +16,15 @@ resource "local_file" "ssh_public_key_openssh" {
   content  = tls_private_key.global_key.public_key_openssh
 }
 
-# GCP Public Compute Address for rancher server node
-#resource "google_compute_address" "rancher_server_address" {
- # name = "rancher-server-ipv4-address"
-#}
+ GCP Public Compute Address for rancher server node
+resource "google_compute_address" "rancher_server_address" {
+ name = "rancher-server-ipv4-address"
+}
 
 # GCP Public Compute Address for quickstart node
-#resource "google_compute_address" "quickstart_node_address" {
- # name = "quickstart-node-ipv4-address"
-#}
+resource "google_compute_address" "quickstart_node_address" {
+  name = "quickstart-node-ipv4-address"
+}
 
 # Firewall Rule to allow all traffic
 #resource "google_compute_firewall" "rancher_fw_allowall" {
