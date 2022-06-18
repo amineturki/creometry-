@@ -27,16 +27,16 @@ resource "google_compute_address" "quickstart_node_address" {
 }
 
 # Firewall Rule to allow all traffic
-resource "google_compute_firewall" "rancher_fw_allowall" {
-  name    = "${var.prefix}-rancher-allowall"
-  network = "default"
+#resource "google_compute_firewall" "rancher_fw_allowall" {
+#  name    = "${var.prefix}-rancher-allowall"
+#  network = "default"
+#
+#  allow {
+#    protocol = "all"
+#  }
 
-  allow {
-    protocol = "all"
-  }
-
-  source_ranges = ["0.0.0.0/0"]
-}
+#  source_ranges = ["0.0.0.0/0"]
+#}
 
 # GCP Compute Instance for creating a single node RKE cluster and installing the Rancher server
 resource "google_compute_instance" "rancher_server" {
