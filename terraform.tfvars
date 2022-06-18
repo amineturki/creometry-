@@ -27,7 +27,7 @@ machine_type = "n1-standard-2"
 prefix = "quickstart"
 
 # Kubernetes version to use for Rancher server cluster
-rancher_kubernetes_version = "v1.23.06+k3s1"
+rancher_kubernetes_version = "v1.22.9+k3s1"
 
 # Rancher server version (format: v0.0.0)
 rancher_version = "2.6.4"
