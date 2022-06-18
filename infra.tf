@@ -40,9 +40,9 @@ resource "google_compute_address" "quickstart_node_address" {
 
 # GCP Compute Instance for creating a single node RKE cluster and installing the Rancher server
 resource "google_compute_instance" "rancher_server" {
-  depends_on = [
-    google_compute_firewall.rancher_fw_allowall,
-  ]
+ # depends_on = [
+  #  google_compute_firewall.rancher_fw_allowall,
+ # ]
 
   name         = "${var.prefix}-rancher-server"
   machine_type = var.machine_type
