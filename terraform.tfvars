@@ -18,7 +18,7 @@ docker_version = "19.03"
 gcp_region = "us-west4"
 
 # GCP zone used for all resources.
-gcp_zone = "us-west4-b"
+gcp_zone = "us-west4-c"
 
 # Machine type used for all compute instances
 machine_type = "n1-standard-2"
