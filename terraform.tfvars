@@ -15,10 +15,10 @@ cert_manager_version = "1.7.1"
 docker_version = "19.03"
 
 # GCP region used for all resources.
-gcp_region = "europe-west6"
+gcp_region = "europe-west1"
 
 # GCP zone used for all resources.
-gcp_zone = "europe-west6-b"
+gcp_zone = "europe-west1-c"
 
 # Machine type used for all compute instances
 machine_type = "n1-standard-2"
