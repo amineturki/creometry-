@@ -30,10 +30,14 @@ jobs:
         uses: 'google-github-actions/auth@v0'
         with:
          credentials_json: '${{ secrets.JSON_SECRET }}'
-
-      - name: Run terraform
+         
+      - name: destroy previous  terraform infra
         run: |
 
            terraform init
            terraform destroy --auto-approve
+
+      - name: Run terraform
+        run: |
+           terraform init
            terraform apply --auto-approve
