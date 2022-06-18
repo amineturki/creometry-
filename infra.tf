@@ -16,9 +16,9 @@ resource "local_file" "ssh_public_key_openssh" {
   content  = tls_private_key.global_key.public_key_openssh
 }
 
- GCP Public Compute Address for rancher server node
+# GCP Public Compute Address for rancher server node
 resource "google_compute_address" "rancher_server_address" {
- name = "rancher-server-ipv4-address"
+  name = "rancher-server-ipv4-address"
 }
 
 # GCP Public Compute Address for quickstart node
@@ -27,22 +27,22 @@ resource "google_compute_address" "quickstart_node_address" {
 }
 
 # Firewall Rule to allow all traffic
-#resource "google_compute_firewall" "rancher_fw_allowall" {
-#  name    = "${var.prefix}-rancher-allowall"
-#  network = "default"
-#
-#  allow {
-#    protocol = "all"
-#  }
+resource "google_compute_firewall" "rancher_fw_allowall" {
+  name    = "${var.prefix}-rancher-allowall"
+  network = "default"
 
-#  source_ranges = ["0.0.0.0/0"]
-#}
+  allow {
+    protocol = "all"
+  }
+
+  source_ranges = ["0.0.0.0/0"]
+}
 
 # GCP Compute Instance for creating a single node RKE cluster and installing the Rancher server
 resource "google_compute_instance" "rancher_server" {
- # depends_on = [
-  #  google_compute_firewall.rancher_fw_allowall,
- # ]
+  depends_on = [
+    google_compute_firewall.rancher_fw_allowall,
+  ]
 
   name         = "${var.prefix}-rancher-server"
   machine_type = var.machine_type
@@ -102,9 +102,9 @@ module "rancher_common" {
 
 # GCP compute instance for creating a single node workload cluster
 resource "google_compute_instance" "quickstart_node" {
- # depends_on = [
-  #  google_compute_firewall.rancher_fw_allowall,
-  #]
+  depends_on = [
+    google_compute_firewall.rancher_fw_allowall,
+  ]
 
   name         = "${var.prefix}-quickstart-node"
   machine_type = var.machine_type
