@@ -6,7 +6,7 @@
 gcp_project = "concise-kayak-352018"
 
 # Admin password to use for Rancher server bootstrap
-rancher_server_admin_password = "123456789abc"
+#rancher_server_admin_password = ""
 
 # Version of cert-manager to install alongside Rancher (format: 0.0.0)
 cert_manager_version = "1.7.1"
