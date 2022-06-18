@@ -27,6 +27,11 @@ jobs:
          with:
           rancher_server_admin_password:'${{ secrets.PASS_RANCHER }}'
          
+       - id: 'password rancher'
+        name: 'set password to rancher server'
+        with:
+         rancher_server_admin_password:'${{ secrets.PASS_RANCHER }}'
+         
       - id: 'auth'
         name: 'Authenticate to Google Cloud'
         uses: 'google-github-actions/auth@v0'
